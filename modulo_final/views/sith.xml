@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <act_window id="modulo_final_sith_action" name="SITH"
+                    res_model="modulo_final.sith"/>
+
+        <record id="modulo_final_sith_view_tree" model="ir.ui.view">
+            <field name="name">Lista sith</field>
+            <field name="model">modulo_final.sith</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+                    <field name="especie"/>
+                    <field name="rabia"/>
+                    <field name="afin_oscu"/>
+                    <field name="color_sable"/>
+                    <field name="mandoble"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="modulo_final_sith_view_search" model="ir.ui.view">
+            <field name="name">Busqueda sith</field>
+            <field name="model">modulo_final.sith</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre"/>
+                    <field name="especie"/>
+                    <field name="rabia"/>
+                    <field name="afin_oscu"/>
+                    <field name="color_sable"/>
+                    <field name="mandoble"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="Star Wars" id="modulo_final_sith" sequence="10"/>
+        <menuitem name="Star Wars" id="starwars_menu" parent="modulo_final_sith" sequence="10"/>
+        <menuitem name="Sith" id="sith_menu" action="modulo_final_sith_action" parent="starwars_menu"
+                  sequence="10"/>
+    </data>
+</odoo>

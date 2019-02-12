@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <act_window id="modulo_final_jedi_action" name="JEDIS"
+                    res_model="modulo_final.jedi"/>
+
+        <record id="modulo_final_jedi_view_tree" model="ir.ui.view">
+            <field name="name">Lista jedis</field>
+            <field name="model">modulo_final.jedi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+                    <field name="especie"/>
+                    <field name="color_sable"/>
+                    <field name="ultima_vista"/>
+                    <field name="planeta_id"/>
+                    <field name="midiclorianos"/>
+                    <field name="nivel"/>
+                    <field name="sith_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="modulo_final_jedi_view_search" model="ir.ui.view">
+            <field name="name">Busqueda jedis</field>
+            <field name="model">modulo_final.jedi</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre"/>
+                    <field name="especie"/>
+                    <field name="color_sable"/>
+                    <field name="ultima_vista"/>
+                    <field name="planeta_id"/>
+                    <field name="midiclorianos"/>
+                    <field name="nivel"/>
+                    <field name="sith_id"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="Star Wars" id="modulo_final_jedi" sequence="10"/>
+        <menuitem name="Star Wars" id="starwars_menu" parent="modulo_final_jedi" sequence="10"/>
+        <menuitem name="Jedis" id="jedis_menu" action="modulo_final_jedi_action" parent="starwars_menu"
+                  sequence="10"/>
+    </data>
+</odoo>

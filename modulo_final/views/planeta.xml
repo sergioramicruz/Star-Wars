@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <act_window id="modulo_final_planeta_action" name="PLANETA"
+                    res_model="modulo_final.planeta"/>
+
+        <record id="modulo_final_planeta_view_tree" model="ir.ui.view">
+            <field name="name">Lista planetas</field>
+            <field name="model">modulo_final.planeta</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="distancia"/>
+                    <field name="destruido"/>
+                    <field name="fecha_destruccion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="modulo_final_planeta_view_search" model="ir.ui.view">
+            <field name="name">Busqueda planetas</field>
+            <field name="model">modulo_final.planeta</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="distancia"/>
+                    <field name="destruido"/>
+                    <field name="fecha_destruccion"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="Star Wars" id="modulo_final_planeta" sequence="10"/>
+        <menuitem name="Star Wars" id="starwars_menu" parent="modulo_final_planeta" sequence="10"/>
+        <menuitem name="Planetas" id="planetas_menu" action="modulo_final_planeta_action" parent="starwars_menu"
+                  sequence="10"/>
+    </data>
+</odoo>
